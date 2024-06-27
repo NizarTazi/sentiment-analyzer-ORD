@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #292929;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            padding: 20px 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-top: 0;
+            color: #343a40;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form textarea {
+            resize: none;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        .container form textarea:focus {
+            border-color: #80bdff;
+            outline: none;
+        }
+        .container form button {
+            padding: 12px;
+            font-size: 16px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .container form button:hover {
+            background: #0056b3;
+        }
+        .prediction {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-left: 5px solid #007bff;
+            border-radius: 4px;
+            text-align: left;
+            color: #495057;
+            transition: border-color 0.3s;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const predictionTextElement = document.querySelector('.prediction strong');
+            if (predictionTextElement) {
+                const predictionText = predictionTextElement.textContent.trim();
+                const predictionBox = document.querySelector('.prediction');
+                if (predictionText === "Prediction: Negative") {
+                    predictionBox.style.borderLeftColor = 'red';
+                } else if (predictionText === "Prediction: Positive") {
+                    predictionBox.style.borderLeftColor = 'green';
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Sentiment Analyzer</h2>
+        <form action="/predict" method="POST">
+            <textarea name="description" rows="8" placeholder="Enter text for sentiment analysis..." required></textarea>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if prediction_text %}
+        <div class="prediction">
+            <strong>{{ prediction_text }}</strong>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
