@@ -23,7 +23,7 @@ You can run this project by either creating a docker image in Docker, or by usin
 First, clone the repository to your local machine:
 
 ```sh
-git clone https://github.com/yourusername/sentiment-analyzer-ORD.git
+git clone https://github.com/NizarTazi/sentiment-analyzer-ORD.git
 cd sentiment-analyzer-ORD
 ```
 
