@@ -73,8 +73,8 @@ Open your web browser and navigate to: http://127.0.0.1:5000/
 
 ## Usage
 
-    You will be prompted with a text box and a predict button.
-    Type movie reviews into the text box and click the predict button.
+    You will be prompted with a text box and a Analyze sentiment button.
+    Type movie reviews into the text box and click the Analyze sentiment button.
     The algorithm will predict if the review is positive or negative.
 
 
