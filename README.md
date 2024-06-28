@@ -15,7 +15,7 @@ You can run this project by either creating a docker image in Docker, or by usin
 ## Requirements
 - [Docker](https://www.docker.com/products/docker-desktop)
 - Python 3.8.5
-- Conda (optional)
+- Conda or miniconda(optional)
   
 ## Setup
 
