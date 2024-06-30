@@ -35,7 +35,7 @@ def get_gpt_embeddings(text, model, tokenizer):
 
 def preprocess_text(text):
     text = re.sub(r'<.*?>', '', text)  # Removing everything that is between <>
-    text = re.sub(f"[{re.escape(string.punctuation)}]", "", text)
+    #text = re.sub(f"[{re.escape(string.punctuation)}]", "", text)
     text = text.lower()
     return text
 
